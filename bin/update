@@ -3,7 +3,7 @@ set -e
 
 test -z "$(git status --porcelain)" || (echo "Git repo not clean"; exit 1)
 
-rake
+bundle exec rake
 bundle update
-rake
+bundle exec rake
 git commit -am "Update gems"
