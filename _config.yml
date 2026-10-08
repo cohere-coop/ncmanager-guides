@@ -73,6 +73,7 @@ exclude:
   - Gemfile.lock
   - node_modules/
   - Rakefile
+  - README.md
   - tmp
   - vendor/bundle/
   - vendor/cache/
