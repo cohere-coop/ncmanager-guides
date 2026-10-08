@@ -13,5 +13,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Cache HTMLProofer
+        uses: actions/cache@v6
+        with:
+          # Cache path specified in Rakefile's `:html_proofer` task
+          path: tmp/.htmlproofer
+          key: htmlproofer-${{ github.run_id }}
+          restore-keys: htmlproofer-
       - name: Run tests
         run: bundle exec rake test

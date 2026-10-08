@@ -24,7 +24,7 @@ task :html_proofer do
   sh 'bundle exec jekyll build --future'
   options = {
     assume_extension: true,
-    cache: { timeframe: '30d' },
+    cache: { timeframe: '30d', storage_dir: 'tmp/.htmlproofer' }, # storage_dir must match the path cached in .github/workflows/test.yml
     # check_html: true, # Problem with theme nav
     check_external_hash: true,
     check_img_http: true,
