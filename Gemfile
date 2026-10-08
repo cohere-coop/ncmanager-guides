@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~>4.2.2' # newer releases use too much from USWDS theme
+gem 'jekyll', '~>4.4.1' # newer releases use too much from USWDS theme
 
 gem 'base64'
 gem 'bigdecimal'
 gem 'csv'
 
-gem 'html-proofer', '< 4.0'
+gem 'html-proofer', '< 6.0'
 gem 'jekyll-autoprefixer' # required by 18F/uswds-jekyll theme
 gem 'mini_racer' # required by 18F/uswds-jekyll theme
 gem 'rake'
