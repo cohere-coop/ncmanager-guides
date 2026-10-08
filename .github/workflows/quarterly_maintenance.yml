@@ -1,0 +1,24 @@
+name: Quarterly Maintenance
+
+on:
+  schedule:
+    # Run at 15:00 on 20th day of months 3, 6, 9, 12
+    - cron: "0 15 20 3,6,9,12 *"
+  workflow_dispatch:
+    # Allow the workflow to be started by hand
+permissions:
+  contents: read
+  issues: write
+jobs:
+  open-issue:
+    runs-on: ubuntu-26.04
+    steps:
+    - uses: actions/checkout@v6
+      name: Checkout repository
+    - name: Open maintenance issue
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        # Strip the issue template's front matter
+        awk 'n >= 2; /^---$/ { n++ }' .github/ISSUE_TEMPLATE/quarterly-maintenance.md > body.md
+        gh issue create --title "Quarterly maintenance $(date +%Y-Q$(( ($(date +%-m) - 1) / 3 + 1 )))" --body-file body.md --assignee ExMember
