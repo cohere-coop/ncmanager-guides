@@ -4,6 +4,9 @@ updates:
     directory: /
     schedule:
       interval: quarterly
+    ignore:
+      # Jekyll is pinned until we decide what to do about https://github.com/cohere-coop/ncmanager-guides/issues/9
+      - dependency-name: jekyll
     groups:
       all:
         patterns: ["*"]
