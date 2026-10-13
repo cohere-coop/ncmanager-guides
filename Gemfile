@@ -6,7 +6,7 @@ gem 'base64'
 gem 'bigdecimal'
 gem 'csv'
 
-gem 'html-proofer', '< 4.0'
+gem 'html-proofer', '< 6.0'
 gem 'jekyll-autoprefixer' # required by 18F/uswds-jekyll theme
 gem 'mini_racer' # required by 18F/uswds-jekyll theme
 gem 'rake'
